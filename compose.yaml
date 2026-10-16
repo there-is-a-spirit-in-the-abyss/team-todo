@@ -1,0 +1,19 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      PUBLIC_URL: ${PUBLIC_URL:-http://localhost:8000}
+      DATABASE_PATH: /app/data/team-todo.db
+      STATIC_DIR: /app/web/dist
+    ports:
+      - "127.0.0.1:${PORT:-8000}:8000"
+    volumes:
+      - team-data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+volumes:
+  team-data:
