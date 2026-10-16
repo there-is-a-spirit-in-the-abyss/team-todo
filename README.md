@@ -6,7 +6,7 @@
 
 下载后双击 `.exe`，填写 SSH 登录信息、选择服务器目录，再点击部署。电脑无需另外安装 Python、Node.js 或 SSH。默认目录 `/team-todo`；部署后打开网页注册账号。
 
-[安装器使用说明](installer/README.md)。首次发布提供已验证的源码构建版安装器；服务器 Docker 会自动完成构建。预构建镜像发布流程见安装说明。
+[安装器使用说明](installer/README.md)。GitHub 自动构建通过后，发布页提供直接拉取预构建镜像的安装器；本地构建的安装器包含干净源码，服务器 Docker 会自动完成构建。
 
 A self-hosted team task tree with local accounts, team applications, multiple projects, shared staging and visual progress. Extracted from Huiyang's Feishu team module. The software connects to no Feishu, Muse, LLM, email or hosted identity service. You provide the server.
 
