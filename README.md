@@ -1,12 +1,20 @@
 # Team Todo UI
 
-## Windows 安装包下载
+English | [简体中文](README.zh-CN.md)
 
-**[下载 team-todo-setup.exe](https://github.com/there-is-a-spirit-in-the-abyss/team-todo/releases/latest/download/team-todo-setup.exe)** · [全部版本与校验文件](https://github.com/there-is-a-spirit-in-the-abyss/team-todo/releases)
+## Windows installer
 
-下载后双击 `.exe`，填写 SSH 登录信息、选择服务器目录，再点击部署。电脑无需另外安装 Python、Node.js 或 SSH。默认目录 `/team-todo`；部署后打开网页注册账号。
+**[Download team-todo-setup.exe](https://github.com/there-is-a-spirit-in-the-abyss/team-todo/releases/latest/download/team-todo-setup.exe)** · [All releases and checksums](https://github.com/there-is-a-spirit-in-the-abyss/team-todo/releases)
 
-[安装器使用说明](installer/README.md)。GitHub 自动构建通过后，发布页提供直接拉取预构建镜像的安装器；本地构建的安装器包含干净源码，服务器 Docker 会自动完成构建。
+Download and double-click the `.exe`, enter your SSH connection details, choose a
+server directory, and deploy. Your computer does not need a separate Python,
+Node.js, or SSH installation. The default server directory is `/team-todo`.
+After deployment, open the website and register your account.
+Downloads require an authorized GitHub account while this repository is private.
+
+See the [installer guide (Simplified Chinese)](installer/README.md). After the
+GitHub release workflow succeeds, the installer pulls a prebuilt app image.
+Local installer builds include clean source that Docker builds on the server.
 
 A self-hosted team task tree with local accounts, team applications, multiple projects, shared staging and visual progress. Extracted from Huiyang's Feishu team module. The software connects to no Feishu, Muse, LLM, email or hosted identity service. You provide the server.
 
@@ -48,7 +56,7 @@ Concurrent stale changes return a conflict instead of overwriting newer work. Th
 
 ## Languages
 
-American English (`en-US`) is the default. Select 简体中文 (`zh-CN`), Español (`es`), Português do Brasil (`pt-BR`) or Deutsch (`de`) from the language control. The choice works before login, persists in the browser, and is saved in the account when signed in. Interface text changes; member names, team/project names, task titles and notes remain exactly as written.
+American English (`en-US`) is the default. Select Simplified Chinese (`zh-CN`), Spanish (`es`), Brazilian Portuguese (`pt-BR`) or German (`de`) from the language control. The choice works before login, persists in the browser, and is saved in the account when signed in. Interface text changes; member names, team/project names, task titles and notes remain exactly as written.
 
 ## Native Python development
 
