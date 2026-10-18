@@ -16,6 +16,45 @@
 例如：创建“产品发布”，拆成“设计 / 开发 / 测试”，再继续细分；任务关系变化时直接移动整条分支，项目进度随任务状态更新。
 这是项目协作看板，当前版本不包含定时提醒、截止时间或周报。
 
+### 项目全貌：任务关系与进度一起看
+
+项目、任务和子任务用连线组成任务树，每张卡片展示状态和负责人。顶部汇总任务数量及已结束比例，左侧可以切换项目。
+
+[![项目任务树：六个任务的层级关系、负责人和项目进度](docs/images/team-task-tree.png)](docs/images/team-task-tree.png)
+
+### 共享暂存区：先收集，再整理
+
+暂时还没决定放在哪里的任务，可以先放入暂存区，再根据项目安排移动整条分支。图中项目与暂存区同时展示，待整理事项清楚可见。
+
+[![项目任务树与共享暂存区：项目内四个任务，暂存区内两个任务](docs/images/team-task-staging.png)](docs/images/team-task-staging.png)
+
+### 任务详情：状态、备注与分支操作
+
+点击任务卡片，在右侧查看负责人、任务状态和备注；有相应权限时，可以修改任务、移动分支、移入暂存区或删除分支。
+
+[![任务详情侧栏：状态切换、名称、备注及移动分支等操作](docs/images/team-task-details.png)](docs/images/team-task-details.png)
+
+### 灵活调整结构，持续跟进项目
+
+任务可以从暂存区重新整理进项目，也可以调整上下级关系。下面展示整理后的任务树：暂存区已清空，项目内五个任务的关系与进度集中呈现。
+
+[![调整后的项目任务树：五个任务、更新后的项目进度和空暂存区](docs/images/team-task-reorganized.png)](docs/images/team-task-reorganized.png)
+
+点击图片可查看原图。
+
+<details>
+<summary>查看登录、创建团队和加入团队的界面</summary>
+
+**登录与注册**：使用本地账号进入应用，界面语言可以独立选择。
+
+[![团队任务的登录与注册界面](docs/images/team-login.png)](docs/images/team-login.png)
+
+**团队入口**：查看已加入的团队、创建新团队，或输入完整团队编号查找并申请加入。
+
+[![团队入口：已加入的团队、创建团队和通过编号查找团队](docs/images/team-workspace.png)](docs/images/team-workspace.png)
+
+</details>
+
 ## 下载
 
 **[下载团队项目进度安装包 · team-todo-setup.exe](https://github.com/there-is-a-spirit-in-the-abyss/team-todo/releases/latest/download/team-todo-setup.exe)**

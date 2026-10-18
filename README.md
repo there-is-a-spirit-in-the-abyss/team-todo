@@ -16,6 +16,45 @@ English | [简体中文](README.zh-CN.md)
 For example, create “Product launch”, split it into “Design / Development / Testing”, and add subtasks. Move whole branches as plans change; project progress updates from task states.
 This version is a collaboration board without deadlines, scheduled reminders or weekly reports.
 
+### Project overview: task relationships and progress
+
+Projects, tasks and subtasks form a connected tree. Each task card shows its status and owner; the header summarizes task counts and progress, while the sidebar lets you switch projects.
+
+[![Project task tree showing six tasks, their hierarchy, owners and project progress](docs/images/team-task-tree.png)](docs/images/team-task-tree.png)
+
+### Shared staging: collect first, organize later
+
+Keep tasks in staging while you decide where they belong, then move whole branches into the right place. This view shows the project and its staged tasks together.
+
+[![Project task tree with four project tasks and two tasks in shared staging](docs/images/team-task-staging.png)](docs/images/team-task-staging.png)
+
+### Task details: status, notes and branch actions
+
+Select a card to inspect its owner, status and notes in the side panel. With the required permissions, edit the task, move its branch, send it to staging or delete the branch.
+
+[![Task details panel with status controls, title, notes and branch actions](docs/images/team-task-details.png)](docs/images/team-task-details.png)
+
+### Adapt the structure as work changes
+
+Bring staged tasks into a project and adjust their parent-child relationships as needed. This reorganized view shows five project tasks, their progress and an empty staging area.
+
+[![Reorganized project tree showing five tasks, updated progress and empty staging](docs/images/team-task-reorganized.png)](docs/images/team-task-reorganized.png)
+
+Click an image to view the original. Screenshots show the Simplified Chinese interface.
+
+<details>
+<summary>View sign-in, team creation and joining</summary>
+
+**Sign in or register:** use a local account and choose the interface language independently.
+
+[![Team Todo sign-in and registration screen](docs/images/team-login.png)](docs/images/team-login.png)
+
+**Team workspace:** open a joined team, create a team, or search with its full team code and apply to join.
+
+[![Team workspace with joined teams, team creation and full-code lookup](docs/images/team-workspace.png)](docs/images/team-workspace.png)
+
+</details>
+
 ## Download
 
 **[Download the team project installer · team-todo-setup.exe](https://github.com/there-is-a-spirit-in-the-abyss/team-todo/releases/latest/download/team-todo-setup.exe)**
