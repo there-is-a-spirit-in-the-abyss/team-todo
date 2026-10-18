@@ -2,6 +2,14 @@
 
 English | [简体中文](README.zh-CN.md)
 
+## English product walkthrough
+
+A lightweight task tree for team projects: see tasks and subtasks together, edit details, move or stage whole branches, and keep progress in view.
+
+https://github.com/user-attachments/assets/d8348c64-8708-4d48-8c50-05ec2478ca66
+
+*English interface and demo data · Instrumental music and sound effects · No voice-over.*
+
 ## Features
 
 **Build projects with a flexible task tree and make team progress easy to see.**
