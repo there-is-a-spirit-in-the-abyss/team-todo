@@ -2,6 +2,8 @@
 
 [English](README.md) | 简体中文
 
+**[▶ B 站视频：Team Todo，用任务树整理团队项目](https://www.bilibili.com/video/BV1rnnV6ZEut/)**
+
 ## 功能
 
 **用灵活的任务树快速搭建项目，让团队进度一目了然。**
