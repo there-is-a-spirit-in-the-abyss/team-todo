@@ -1,24 +1,48 @@
-# Team Todo UI
+# Team Todo · Team Project Progress
 
 English | [简体中文](README.zh-CN.md)
 
-## Windows installer
+## Features
 
-**[Download team-todo-setup.exe](https://github.com/there-is-a-spirit-in-the-abyss/team-todo/releases/latest/download/team-todo-setup.exe)** · [All releases and checksums](https://github.com/there-is-a-spirit-in-the-abyss/team-todo/releases)
+**Build projects with a flexible task tree and make team progress easy to see.**
 
-Download and double-click the `.exe`, enter your SSH connection details, choose a
-server directory, and deploy. Your computer does not need a separate Python,
-Node.js, or SSH installation. The default server directory is `/team-todo`.
-After deployment, open the website and register your account.
-Downloads require an authorized GitHub account while this repository is private.
+- **Break down work freely:** create multiple projects and organize tasks and subtasks to match your workflow.
+- **See progress at a glance:** follow task states, project completion and parent-child relationships.
+- **Reorganize flexibly:** use shared staging and whole-branch moves to collect loose tasks and structure them later.
+- **Keep deployment lightweight:** uses SQLite without Feishu, Muse, an LLM, email or a hosted identity provider.
+- **Keep team data on your server:** users register locally and apply with the full ten-digit team code; existing members approve access, and no enterprise team directory is exposed.
+- **Separate teams and permissions:** each team has its own members, projects and tasks; removal revokes subsequent access, and task editing follows author permissions.
 
-See the [installer guide (Simplified Chinese)](installer/README.md). After the
-GitHub release workflow succeeds, the installer pulls a prebuilt app image.
-Local installer builds include clean source that Docker builds on the server.
+For example, create “Product launch”, split it into “Design / Development / Testing”, and add subtasks. Move whole branches as plans change; project progress updates from task states.
+This version is a collaboration board without deadlines, scheduled reminders or weekly reports.
 
-A self-hosted team task tree with local accounts, team applications, multiple projects, shared staging and visual progress. Extracted from Huiyang's Feishu team module. The software connects to no Feishu, Muse, LLM, email or hosted identity service. You provide the server.
+## Download
 
-## Quick start with Docker
+**[Download the team project installer · team-todo-setup.exe](https://github.com/there-is-a-spirit-in-the-abyss/team-todo/releases/latest/download/team-todo-setup.exe)**
+
+[All releases and checksums](https://github.com/there-is-a-spirit-in-the-abyss/team-todo/releases) · [GitHub repository](https://github.com/there-is-a-spirit-in-the-abyss/team-todo)
+
+Double-click the download to open the deployment wizard. Your computer needs no separate Python, Node.js or SSH installation.
+The repository is currently private; downloading requires an authorized GitHub account.
+
+## Installation and deployment
+
+**Enter your server connection details and website address, then let the wizard install the application.**
+
+1. Prepare a Linux server reachable over SSH and open `team-todo-setup.exe`.
+2. Enter the server IP or domain, SSH port, username and password or private key, then connect and check the server.
+3. Choose the installation directory (default `/team-todo`), enter the website address, and confirm HTTPS or HTTP settings.
+4. Deploy. The installer checks the environment, installs missing supported Docker/Compose components, and starts the app. No Feishu or model credentials are needed.
+5. Open the website, register an account, then create a team and project or apply using a full team code.
+
+HTTPS needs a reachable address and open certificate-validation ports. Team members use the same deployed website to share their data.
+
+[Detailed installer guide](installer/README.md)
+
+<details>
+<summary>Manual deployment, team permissions, languages and backups</summary>
+
+### Quick start with Docker
 
 Windows users can use the [Chinese graphical installer](installer/README.md):
 double-click `team-todo-setup.exe`, enter SSH connection information, browse or
@@ -37,7 +61,7 @@ Open **http://localhost:8000** and register your own account. The initial instal
 
 For a server deployment, copy `.env.example` to `.env` and set `PUBLIC_URL` to the exact browser origin, for example `https://tasks.example.com`. Keep the app's loopback port behind an HTTPS reverse proxy on that server. Access through an SSH tunnel is also possible. Configure the reverse proxy to preserve `Host` and pass requests to `127.0.0.1:8000`. The app checks Origin on every change, so scheme, hostname and port must match. HTTPS deployments use Secure session cookies automatically.
 
-## How teams work
+### How teams work
 
 Each installation represents one enterprise. Register with a unique username, password and display name; no email is needed. A user can join multiple teams. After login, the chooser contains exactly three sections: **My teams**, **Create team**, and **Search team**. Search accepts only the complete ten-digit team code and exposes no enterprise directory. Search results show Apply, Pending or Joined. Rejected applicants can apply again.
 
@@ -54,11 +78,11 @@ Board rules are inherited from the original module:
 
 Concurrent stale changes return a conflict instead of overwriting newer work. The browser refreshes the latest board for review.
 
-## Languages
+### Languages
 
 American English (`en-US`) is the default. Select Simplified Chinese (`zh-CN`), Spanish (`es`), Brazilian Portuguese (`pt-BR`) or German (`de`) from the language control. The choice works before login, persists in the browser, and is saved in the account when signed in. Interface text changes; member names, team/project names, task titles and notes remain exactly as written.
 
-## Native Python development
+### Native Python development
 
 Requires Python 3.11+ and Node.js 22+ for building the frontend.
 
@@ -78,7 +102,7 @@ Native defaults: `PUBLIC_URL=http://localhost:8000`, `DATABASE_PATH=data/team-to
 
 For Vite development, set backend `PUBLIC_URL=http://127.0.0.1:5173`, start the backend on port 8000, then run `npm run dev` in `web` and open that exact origin. The Vite proxy forwards `/api` to the backend.
 
-## Password recovery and backups
+### Password recovery and backups
 
 The server operator can reset a password locally. The password is prompted privately and all that user's sessions are invalidated:
 
@@ -99,7 +123,7 @@ docker compose cp app:/app/data/backup.db ./backup.db
 
 Backups contain private business data. Store them separately from source control. Stop the app before restoring a backup, preserve the current database first, replace the database with the consistent backup, and ensure stale WAL/SHM files from the old database are not mixed with it. File ownership must allow the container's uid 10001 to read/write restored files.
 
-## Verification and source delivery
+### Verification and source delivery
 
 ```sh
 python -m pytest
@@ -124,3 +148,5 @@ $env:DATABASE_PATH='.runtime/browser-test.db'
 ```
 
 Exact verified results and environment limits are recorded in [docs/VERIFICATION.md](docs/VERIFICATION.md). The implementation contract is in [docs/DESIGN.md](docs/DESIGN.md). Source delivery excludes databases, credentials, `.env`, runtime logs, dependency folders and build caches. Automated tests use temporary fixture data; no demo or production accounts are installed. Source and Windows installers are published through the repository and Releases linked above.
+
+</details>
